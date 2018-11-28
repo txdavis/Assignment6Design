@@ -1,0 +1,21 @@
+
+apply plugin: 'application'
+apply plugin: 'java'	// adds test task
+
+sourceSets.main.java.srcDirs = ['src']
+mainClassName = 'all.Main'
+
+compileJava.options.encoding = 'UTF-8'
+
+// Repositories and dependencies for code go here
+repositories {
+  mavenCentral()
+}
+
+test {
+	useJUnit()			// allow JUnit testing
+}
+
+dependencies {
+  compile 'junit:junit:4.12'
+}
